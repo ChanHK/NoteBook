@@ -132,3 +132,11 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 475px) {
+  .sidebar.collapse {
+    width: 40px;
+  }
+  .sidebar {
+    align-items: center;
+  }
+}
