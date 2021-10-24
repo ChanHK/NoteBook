@@ -72,10 +72,6 @@ body {
   overflow: auto;
 }
 
-.anim {
-  animation: bottom 0.8s 0s both;
-}
-
 .mainHeader {
   font-size: 30px;
   color: #fff;
@@ -89,18 +85,6 @@ body {
     rgb(31 29 43 / 0%) 100%
   );
   z-index: 1;
-}
-
-@keyframes bottom {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 @media screen and (max-width: 475px) {
