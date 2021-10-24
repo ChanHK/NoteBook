@@ -1,4 +1,4 @@
-.container {
+.tableContainer {
   padding: 20px;
   overflow: hidden;
   display: flex;
@@ -20,19 +20,20 @@
     font-weight: 300;
 
     button {
-      background-color: #3dd28d;
+      background-color: #3e7c17;
       outline: none;
       border: 0 none;
-      border-radius: 10px;
+      border-radius: 8px;
       padding: 8px 8px;
       cursor: pointer;
       text-align: center;
       font-size: 13px;
       font-weight: 500;
       line-height: 1.3;
-
+      width: 80px;
+      color: #fff;
       & + button {
-        background-color: #f32c52;
+        background-color: #a9333a;
       }
 
       &:hover {
@@ -49,13 +50,8 @@
       display: block;
       &:last-child {
         margin-bottom: 10px;
-      }
-      button {
-        width: 35px;
-        color: transparent;
-      }
-      button + button {
-        margin-left: 5px;
+        display: flex;
+        justify-content: space-between;
       }
     }
     th,
@@ -90,14 +86,13 @@
       &:last-child {
         margin-bottom: none;
         border-bottom: none;
+        display: table-cell;
       }
       button {
-        width: 100px;
-        color: #fff;
+        margin-top: 5px;
       }
       button + button {
         margin-left: 5px;
-        margin-top: 5px;
       }
     }
     th,
@@ -115,6 +110,77 @@
       &:last-child {
         max-width: 150px;
         text-align: center;
+      }
+    }
+  }
+}
+
+.enterDataContainer {
+  display: flex;
+  flex-direction: column;
+
+  .inputBox {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  input {
+    width: 60%;
+    height: 34px;
+    border: none;
+    background-color: #353340;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 0 0 2px rgba(134, 140, 160, 0.02);
+    color: #fff;
+    padding: 0 16px;
+    & + input {
+      width: 35%;
+      margin-left: 5px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    border: none;
+    background-color: #353340;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 0 0 2px rgba(134, 140, 160, 0.02);
+    color: #fff;
+    resize: none;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-top: 20px;
+      outline: none;
+      border: 0 none;
+      border-radius: 8px;
+      padding: 8px 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.3;
+      width: 80px;
+      color: #fff;
+      background-color: #c36a2d;
+
+      &:hover {
+        opacity: 0.85;
       }
     }
   }
