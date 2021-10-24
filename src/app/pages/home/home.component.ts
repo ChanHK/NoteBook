@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
   public selected: string;
 
   constructor() {
-    this.selected = '';
+    this.selected = 'home';
   }
 
   ngOnInit(): void {}

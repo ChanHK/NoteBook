@@ -9,6 +9,9 @@
             <div class="mainHeader anim" style="--delay: 0s">Home</div>
             <app-home-home></app-home-home>
           </div>
+          <div *ngIf="this.selected == 'notes'">
+            <app-home-notes></app-home-notes>
+          </div>
         </div>
       </div>
     </div>
