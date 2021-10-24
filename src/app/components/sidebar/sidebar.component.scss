@@ -122,16 +122,6 @@
   }
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgb(21 20 26 / 63%);
-  border-radius: 10px;
-}
-
 @media screen and (max-width: 475px) {
   .sidebar.collapse {
     width: 40px;
