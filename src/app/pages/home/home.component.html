@@ -1,12 +1,14 @@
 <html>
   <body>
     <div class="container">
-      <app-sidebar></app-sidebar>
+      <app-sidebar (sender)="receiver($event)"></app-sidebar>
       <div class="wrapper">
         <app-header></app-header>
         <div class="mainContainer">
-          <div class="mainHeader anim" style="--delay: 0s">Home</div>
-          <app-home-home></app-home-home>
+          <div *ngIf="this.selected == 'home'">
+            <div class="mainHeader anim" style="--delay: 0s">Home</div>
+            <app-home-home></app-home-home>
+          </div>
         </div>
       </div>
     </div>

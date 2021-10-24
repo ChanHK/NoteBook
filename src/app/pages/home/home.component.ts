@@ -3,13 +3,18 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public selected: string;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
+    this.selected = '';
   }
 
+  ngOnInit(): void {}
+
+  receiver(x: string) {
+    this.selected = x;
+  }
 }

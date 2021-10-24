@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import * as $ from 'jquery';
 
 @Component({
@@ -7,7 +7,13 @@ import * as $ from 'jquery';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  constructor() {}
+  public selected: string;
+
+  @Output() sender = new EventEmitter();
+
+  constructor() {
+    this.selected = '';
+  }
 
   ngOnInit(): void {
     $('.sidebar-link').on('click', (event) => {
@@ -26,4 +32,9 @@ export class SidebarComponent implements OnInit {
       })
       .resize();
   }
+
+  handleClick = (x: string) => {
+    this.selected = x;
+    this.sender.emit(this.selected);
+  };
 }
