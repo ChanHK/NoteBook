@@ -8,6 +8,7 @@
 .table {
   width: 100%;
   display: table;
+  margin-bottom: 10px;
 
   th {
     text-align: left;
@@ -49,7 +50,6 @@
     td {
       display: block;
       &:last-child {
-        margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
       }
@@ -80,9 +80,6 @@
     }
 
     td {
-      &::before {
-        content: '';
-      }
       &:last-child {
         margin-bottom: none;
         border-bottom: none;
