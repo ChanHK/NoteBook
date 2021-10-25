@@ -6,14 +6,14 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
-  border-radius: 10px;
+  width: 0px;
+  // border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgb(21 20 26 / 63%);
-  border-radius: 10px;
-}
+// ::-webkit-scrollbar-thumb {
+//   background-color: rgb(21 20 26 / 63%);
+//   border-radius: 10px;
+// }
 
 .anim {
   animation: bottom 0.8s 0s both;
