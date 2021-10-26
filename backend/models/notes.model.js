@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { title } = require("process");
 
 const notesSchema = new mongoose.Schema({
   user_id: {
