@@ -104,20 +104,12 @@ form {
     color: black;
 
     font-weight: 300;
-
-    &:hover {
-      background-color: yellow;
-    }
-
-    &:focus {
-      background-color: white;
-    }
   }
 
   button {
     appearance: none;
     outline: 0;
-    background-color: white;
+    background-color: #6c5ecf;
     border: 0;
     padding: 10px 15px;
 
@@ -126,9 +118,5 @@ form {
     cursor: pointer;
     font-size: 18px;
     transition-duration: 0.25s;
-
-    &:hover {
-      background-color: green;
-    }
   }
 }
