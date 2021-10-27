@@ -11,7 +11,7 @@ This project uses MEAN stack:
 ## Compile
 Front-end
 ```npm
-ng serve1
+ng serve
 ```
 
 Back-end
