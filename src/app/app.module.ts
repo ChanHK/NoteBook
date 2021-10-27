@@ -1,5 +1,7 @@
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,13 +20,10 @@ import { HomeNotesComponent } from './pages/home-notes/home-notes.component';
     SidebarComponent,
     HeaderComponent,
     HomeHomeComponent,
-    HomeNotesComponent
+    HomeNotesComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [authInterceptorProviders],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
