@@ -1,4 +1,7 @@
+import { TokenService } from './../../service/token.service';
+import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,7 +9,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+  form = {
+    username: '',
+    password: '',
+  };
+  isLoggedIn: boolean = false;
+  isLoginFailed: boolean = false;
+  errorMessage: string = '';
 
-  ngOnInit(): void {}
+  constructor(
+    private auth: AuthService,
+    private token: TokenService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    if (this.token.getToken()) this.isLoggedIn = true;
+  }
+
+  onSubmit(): void {
+    const { username, password } = this.form;
+    this.auth.login(username, password).subscribe(
+      (data) => {
+        this.token.saveToken(data.accessToken);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.router.navigate(['/home']);
+      },
+      (err) => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
 }

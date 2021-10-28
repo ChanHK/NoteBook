@@ -11,6 +11,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeHomeComponent } from './pages/home-home/home-home.component';
 import { HomeNotesComponent } from './pages/home-notes/home-notes.component';
+import { AuthService } from './service/auth.service';
+import { TokenService } from './service/token.service';
+import { NoteService } from './service/note.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +26,8 @@ import { HomeNotesComponent } from './pages/home-notes/home-notes.component';
     HomeHomeComponent,
     HomeNotesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [authInterceptorProviders],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [authInterceptorProviders, AuthService, TokenService, NoteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
