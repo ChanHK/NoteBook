@@ -36,14 +36,43 @@
       </tr>
     </table>
   </div>
-  <div class="enterDataContainer anim">
+  <form
+    class="enterDataContainer anim"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate
+  >
     <div class="inputBox">
-      <input placeholder="Title" />
-      <input placeholder="Effort" />
+      <input
+        type="text"
+        placeholder="Title"
+        [(ngModel)]="newNote.title"
+        required
+        id="title"
+        name="title"
+        #title="ngModel"
+      />
+      <input
+        type="text"
+        placeholder="Effort"
+        [(ngModel)]="newNote.effort"
+        required
+        id="effort"
+        name="effort"
+        #effort="ngModel"
+      />
     </div>
-    <textarea placeholder="Description"></textarea>
+    <textarea
+      type="text"
+      placeholder="Description"
+      required
+      [(ngModel)]="newNote.description"
+      id="description"
+      name="description"
+      #description="ngModel"
+    ></textarea>
     <div class="buttonContainer">
-      <button>Save</button>
+      <button type="submit">Save</button>
     </div>
-  </div>
+  </form>
 </div>
