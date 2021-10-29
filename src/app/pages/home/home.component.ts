@@ -1,4 +1,6 @@
+import { TokenService } from './../../service/token.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public selected: string;
 
-  constructor() {
+  constructor(private token: TokenService, private router: Router) {
     this.selected = 'home';
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (!this.token.getToken()) this.router.navigate(['/login']);
+  }
 
   receiver(x: string) {
     this.selected = x;
