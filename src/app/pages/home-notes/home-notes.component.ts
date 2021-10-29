@@ -40,6 +40,17 @@ export class HomeNotesComponent implements OnInit {
     );
   };
 
+  delete = (id: string) => {
+    this.noteSer.deleteNotes(id).subscribe(
+      (data) => {
+        this.notes = data;
+      },
+      (err) => {
+        console.log('delete failed');
+      }
+    );
+  };
+
   onSubmit(): void {
     const { title, description, effort } = this.newNote;
     this.noteSer.addNewNotes(title, description, parseInt(effort)).subscribe(
