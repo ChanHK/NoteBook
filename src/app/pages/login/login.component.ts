@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
     username: '',
     password: '',
   };
-  isLoggedIn: boolean = false;
   isLoginFailed: boolean = false;
   errorMessage: string = '';
 
@@ -24,7 +23,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.token.getToken()) this.isLoggedIn = true;
+    if (this.token.getToken()) this.router.navigate(['/home']);
   }
 
   onSubmit(): void {
@@ -34,7 +33,6 @@ export class LoginComponent implements OnInit {
         this.token.saveToken(data.accessToken);
 
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
         this.router.navigate(['/home']);
       },
       (err) => {
