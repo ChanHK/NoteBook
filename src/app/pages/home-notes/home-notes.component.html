@@ -12,7 +12,7 @@
         <td>{{ note.description }}</td>
         <td>{{ note.effort }}</td>
         <td>
-          <button>Complete</button>
+          <button (click)="onComplete(note.effort, note._id)">Complete</button>
           <button>Delete</button>
         </td>
       </tr>

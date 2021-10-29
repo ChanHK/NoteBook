@@ -29,6 +29,17 @@ export class HomeNotesComponent implements OnInit {
     });
   }
 
+  onComplete = (effort: number, id: string) => {
+    this.noteSer.completeNotes(effort, id).subscribe(
+      (data) => {
+        this.notes = data;
+      },
+      (err) => {
+        console.log('complete failed');
+      }
+    );
+  };
+
   onSubmit(): void {
     const { title, description, effort } = this.newNote;
     this.noteSer.addNewNotes(title, description, parseInt(effort)).subscribe(
