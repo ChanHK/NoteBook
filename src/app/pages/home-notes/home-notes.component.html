@@ -7,28 +7,10 @@
         <th>Effort</th>
         <th>Actions</th>
       </tr>
-      <tr>
-        <td>React adsasdasd asd asd asd ad as</td>
-        <td>redux, mongo, actions</td>
-        <td>1000</td>
-        <td>
-          <button>Complete</button>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>React</td>
-        <td>redux, mongo, actions</td>
-        <td>1000</td>
-        <td>
-          <button>Complete</button>
-          <button>Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <td>React</td>
-        <td>redux, mongo, actions</td>
-        <td>1000</td>
+      <tr *ngFor="let note of notes">
+        <td>{{ note.title }}</td>
+        <td>{{ note.description }}</td>
+        <td>{{ note.effort }}</td>
         <td>
           <button>Complete</button>
           <button>Delete</button>
@@ -53,7 +35,7 @@
         #title="ngModel"
       />
       <input
-        type="text"
+        type="number"
         placeholder="Effort"
         [(ngModel)]="newNote.effort"
         required

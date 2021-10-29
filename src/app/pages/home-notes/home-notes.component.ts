@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { TokenService } from './../../service/token.service';
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/service/note.service';
+import { Note } from 'src/app/model/note';
 
 @Component({
   selector: 'app-home-notes',
@@ -9,7 +10,7 @@ import { NoteService } from 'src/app/service/note.service';
   styleUrls: ['./home-notes.component.scss'],
 })
 export class HomeNotesComponent implements OnInit {
-  notes = [];
+  notes: Array<Note> = [];
   newNote = {
     title: '',
     description: '',
@@ -17,18 +18,20 @@ export class HomeNotesComponent implements OnInit {
   };
 
   constructor(
-    private note: NoteService,
+    private noteSer: NoteService,
     private token: TokenService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    if (!this.token.getToken()) this.router.navigate(['/login']);
+    this.noteSer.getAllNotes().subscribe((data) => {
+      this.notes = data;
+    });
   }
 
   onSubmit(): void {
     const { title, description, effort } = this.newNote;
-    this.note.addNewNotes(title, description, parseInt(effort)).subscribe(
+    this.noteSer.addNewNotes(title, description, parseInt(effort)).subscribe(
       (data) => {
         this.notes = data;
         this.newNote.title = '';
