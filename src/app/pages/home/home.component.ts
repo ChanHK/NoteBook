@@ -1,6 +1,6 @@
-import { TokenService } from './../../service/token.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +15,18 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.token.getToken()) this.router.navigate(['/login']);
+    if (!this.token.getToken()) this.toLoginPage();
   }
 
   receiver(x: string) {
-    this.selected = x;
+    if (x !== 'logout') this.selected = x;
+    else {
+      this.token.signOut();
+      this.toLoginPage();
+    }
+  }
+
+  toLoginPage() {
+    this.router.navigate(['/login']);
   }
 }
