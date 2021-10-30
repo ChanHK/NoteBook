@@ -1,5 +1,3 @@
-import { Router } from '@angular/router';
-import { TokenService } from './../../service/token.service';
 import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/service/note.service';
 import { Note } from 'src/app/model/note';
@@ -17,11 +15,7 @@ export class HomeNotesComponent implements OnInit {
     effort: '',
   };
 
-  constructor(
-    private noteSer: NoteService,
-    private token: TokenService,
-    private router: Router
-  ) {}
+  constructor(private noteSer: NoteService) {}
 
   ngOnInit(): void {
     this.noteSer.getAllNotes().subscribe((data) => {
