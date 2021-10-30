@@ -19,6 +19,11 @@ Back-end
 nodemon server
 ```
 
+Full stack
+```npm
+npm run dev
+```
+
 ## Email
 notebookapp2021@gmail.com
 
