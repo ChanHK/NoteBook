@@ -1,0 +1,54 @@
+<div class="center">
+  <div class="main-block anim" style="--delay: 0.1s">
+    <div class="main-title">Study Smart, Play Hard</div>
+  </div>
+  <div class="main-block center anim" style="--delay: 0.2s">
+    <div class="main-title">Current Rank</div>
+    <div class="main-block-score">{{ userInfo.score }} points</div>
+    <img
+      class="main-block-img-league1"
+      src="assets/images/clashRoyale/League-1.png"
+      *ngIf="userInfo.score >= 0 && userInfo.score <= 1500"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-2.png"
+      *ngIf="userInfo.score > 1500 && userInfo.score <= 3000"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-3.png"
+      *ngIf="userInfo.score > 3000 && userInfo.score <= 4500"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-4.png"
+      *ngIf="userInfo.score > 4500 && userInfo.score <= 6000"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-5.png"
+      *ngIf="userInfo.score > 6000 && userInfo.score <= 7500"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-6.png"
+      *ngIf="userInfo.score > 7500 && userInfo.score <= 9000"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-7.png"
+      *ngIf="userInfo.score > 9000 && userInfo.score <= 10500"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-8.png"
+      *ngIf="userInfo.score > 10500 && userInfo.score <= 12000"
+    />
+    <img
+      class="main-block-img-league2"
+      src="assets/images/clashRoyale/League-9.png"
+      *ngIf="userInfo.score > 12000"
+    />
+  </div>
+</div>

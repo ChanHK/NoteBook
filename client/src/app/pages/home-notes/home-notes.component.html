@@ -1,0 +1,60 @@
+<div>
+  <div class="tableContainer anim" *ngIf="notes.length !== 0">
+    <table class="table">
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Effort</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let note of notes">
+        <td>{{ note.title }}</td>
+        <td>{{ note.description }}</td>
+        <td>{{ note.effort }}</td>
+        <td>
+          <button (click)="onComplete(note.effort, note._id)">Complete</button>
+          <button (click)="delete(note._id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <form
+    class="enterDataContainer anim"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    novalidate
+  >
+    <div class="inputBox">
+      <input
+        type="text"
+        placeholder="Title"
+        [(ngModel)]="newNote.title"
+        required
+        id="title"
+        name="title"
+        #title="ngModel"
+      />
+      <input
+        type="number"
+        placeholder="Effort"
+        [(ngModel)]="newNote.effort"
+        required
+        id="effort"
+        name="effort"
+        #effort="ngModel"
+      />
+    </div>
+    <textarea
+      type="text"
+      placeholder="Description"
+      required
+      [(ngModel)]="newNote.description"
+      id="description"
+      name="description"
+      #description="ngModel"
+    ></textarea>
+    <div class="buttonContainer">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
