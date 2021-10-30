@@ -9,16 +9,16 @@ export class TokenService {
   constructor() {}
 
   signOut(): void {
-    window.sessionStorage.clear();
+    window.localStorage.clear();
   }
 
   public saveToken(token: string): void {
-    window.sessionStorage.removeItem(TOKEN_KEY);
-    window.sessionStorage.setItem(TOKEN_KEY, token);
+    window.localStorage.removeItem(TOKEN_KEY);
+    window.localStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string {
-    let token = window.sessionStorage.getItem(TOKEN_KEY);
+    let token = window.localStorage.getItem(TOKEN_KEY);
     if (token) return token;
     else return '';
   }
