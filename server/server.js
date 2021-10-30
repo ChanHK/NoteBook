@@ -42,6 +42,15 @@ app.use("/api/user", user);
 // app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 // app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 
+// serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "dist/notebook")));
+
+  app.get("/*", (req, res) =>
+    res.sendFile("index.html", { root: "dist/notebook/" })
+  );
+}
+
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {

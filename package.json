@@ -13,6 +13,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",
+    "path": "^0.12.7",
     "validator": "^13.6.0"
   },
   "devDependencies": {},
@@ -21,8 +22,13 @@
     "start": "node server/server.js",
     "server": "cd server && nodemon server",
     "client": "cd client && ng serve",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "ng build --prod"
   },
   "author": "clifford chan",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "13.12.0",
+    "npm": "6.14.4"
+  }
 }
