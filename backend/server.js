@@ -30,11 +30,11 @@ mongoose
   .catch((err) => console.log(err));
 
 // add routes here
-const user = require("./api/user.api");
+const auth = require("./api/auth.api");
 const notes = require("./api/notes.api");
 
 // use routes here
-app.use("/api/user", user);
+app.use("/api/user", auth);
 app.use("/api/notes", notes);
 
 // app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
