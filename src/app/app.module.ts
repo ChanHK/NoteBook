@@ -1,3 +1,4 @@
+import { UserService } from './service/user.service';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +28,13 @@ import { FormsModule } from '@angular/forms';
     HomeNotesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [authInterceptorProviders, AuthService, TokenService, NoteService],
+  providers: [
+    authInterceptorProviders,
+    AuthService,
+    TokenService,
+    NoteService,
+    UserService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
