@@ -39,16 +39,13 @@ app.use("/api/user", auth);
 app.use("/api/notes", notes);
 app.use("/api/user", user);
 
-// app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-// app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-
 // serve static assets if in production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "dist/notebook")));
+  app.use(express.static(__dirname + "../client/dist/client"));
 
-  app.get("/*", (req, res) =>
-    res.sendFile("index.html", { root: "dist/notebook/" })
-  );
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist/client/index.html"));
+  });
 }
 
 const port = process.env.PORT || 4000;
