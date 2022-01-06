@@ -1,0 +1,27 @@
+.calender {
+  background-color: #876445;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+}
+
+.calender-box-store {
+  margin: 50px 0px;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.calender-box {
+  background-color: #ca965c;
+  width: 12%;
+  min-width: 100px;
+  height: 120px;
+  border-radius: 20px;
+  margin: 10px;
+}
+//#EEC373
+//#F4DFBA

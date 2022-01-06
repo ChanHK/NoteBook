@@ -16,16 +16,18 @@ import { AuthService } from './service/auth.service';
 import { TokenService } from './service/token.service';
 import { NoteService } from './service/note.service';
 import { FormsModule } from '@angular/forms';
+import { HomeCalenderComponent } from './pages/home-calender/home-calender.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    LoginComponent, 
     HomeComponent,
     SidebarComponent,
     HeaderComponent,
     HomeHomeComponent,
     HomeNotesComponent,
+    HomeCalenderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [
