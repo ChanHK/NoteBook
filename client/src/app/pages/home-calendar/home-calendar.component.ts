@@ -16,17 +16,17 @@ const month: Array<string> = [
 ];
 
 @Component({
-  selector: 'app-home-calender',
-  templateUrl: './home-calender.component.html',
-  styleUrls: ['./home-calender.component.scss'],
+  selector: 'app-home-calendar',
+  templateUrl: './home-calendar.component.html',
+  styleUrls: ['./home-calendar.component.scss'],
 })
-export class HomeCalenderComponent implements OnInit {
-  public calenderBoxNum: Array<number>;
+export class HomeCalendarComponent implements OnInit {
+  public calendarBoxNum: Array<number>;
   public monthNum: number;
   public year: number;
 
   constructor() {
-    this.calenderBoxNum = Array(35)
+    this.calendarBoxNum = Array(35)
       .fill(0)
       .map((x, i) => i);
 

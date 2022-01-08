@@ -1,4 +1,4 @@
-.calender {
+.calendar {
   background-color: #876445;
   width: 100%;
   height: auto;
@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 
-.calender-box-store {
+.calendar-box-store {
   margin: 50px 0px;
   flex-wrap: wrap;
   display: flex;
@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.calender-box {
+.calendar-box {
   background-color: #ca965c;
   width: 12%;
   min-width: 100px;
@@ -26,7 +26,7 @@
   margin: 10px;
 }
 
-.calender-year-month {
+.calendar-year-month {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@
   flex-direction: row;
 }
 
-.calender-month-year-box {
+.calendar-month-year-box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,7 +44,7 @@
   width: auto;
 }
 
-.calender-button {
+.calendar-button {
   background-color: #eec373;
   width: 30px;
   height: 30px;
@@ -61,7 +61,7 @@
   }
 }
 
-.calender-increment-button {
+.calendar-increment-button {
   border-top: 5px solid transparent;
   border-left: 10px solid #876445;
   border-bottom: 5px solid transparent;
@@ -69,7 +69,7 @@
   margin-left: 2px;
 }
 
-.calender-decrement-button {
+.calendar-decrement-button {
   border-top: 5px solid transparent;
   border-right: 10px solid #876445;
   border-bottom: 5px solid transparent;

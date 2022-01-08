@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeCalenderComponent } from './home-calender.component';
+import { HomeCalendarComponent } from './home-calendar.component';
 
-describe('HomeCalenderComponent', () => {
-  let component: HomeCalenderComponent;
-  let fixture: ComponentFixture<HomeCalenderComponent>;
+describe('HomeCalendarComponent', () => {
+  let component: HomeCalendarComponent;
+  let fixture: ComponentFixture<HomeCalendarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeCalenderComponent ]
+      declarations: [ HomeCalendarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeCalenderComponent);
+    fixture = TestBed.createComponent(HomeCalendarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

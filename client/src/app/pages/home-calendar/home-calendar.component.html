@@ -1,0 +1,26 @@
+<div class="calendar anim">
+  <div class="calendar-box-store">
+    <div class="calendar-year-month">
+      <div class="calendar-month-year-box">
+        <button class="calendar-button" (click)="this.decreMonth()">
+          <div class="calendar-decrement-button"></div>
+        </button>
+        {{ this.showMonth() }}
+        <button class="calendar-button" (click)="this.increMonth()">
+          <div class="calendar-increment-button"></div>
+        </button>
+      </div>
+
+      <div class="calendar-month-year-box">
+        <button class="calendar-button" (click)="this.decreYear()">
+          <div class="calendar-decrement-button"></div>
+        </button>
+        {{ this.showYear() }}
+        <button class="calendar-button" (click)="this.increYear()">
+          <div class="calendar-increment-button"></div>
+        </button>
+      </div>
+    </div>
+    <div class="calendar-box" *ngFor="let i of calendarBoxNum"></div>
+  </div>
+</div>
