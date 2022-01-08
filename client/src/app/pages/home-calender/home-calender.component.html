@@ -2,21 +2,21 @@
   <div class="calender-box-store">
     <div class="calender-year-month">
       <div class="calender-month-year-box">
-        <button class="calender-button">
+        <button class="calender-button" (click)="this.decreMonth()">
           <div class="calender-decrement-button"></div>
         </button>
-        JANUARY
-        <button class="calender-button">
+        {{ this.showMonth() }}
+        <button class="calender-button" (click)="this.increMonth()">
           <div class="calender-increment-button"></div>
         </button>
       </div>
 
       <div class="calender-month-year-box">
-        <button class="calender-button">
+        <button class="calender-button" (click)="this.decreYear()">
           <div class="calender-decrement-button"></div>
         </button>
-        1999
-        <button class="calender-button">
+        {{ this.showYear() }}
+        <button class="calender-button" (click)="this.increYear()">
           <div class="calender-increment-button"></div>
         </button>
       </div>
