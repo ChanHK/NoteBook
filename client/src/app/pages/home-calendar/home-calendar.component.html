@@ -21,6 +21,9 @@
         </button>
       </div>
     </div>
-    <div class="calendar-box" *ngFor="let i of calendarBoxNum"></div>
+    <div class="calendar-box" *ngFor="let i of calendarBoxNum">
+      <div>{{ this.showDay(i) }}</div>
+      <div>{{ i + 1 }}</div>
+    </div>
   </div>
 </div>
